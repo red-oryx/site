@@ -1,442 +1,252 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Red Oryx</title>
-  <meta name="description" content="Red Oryx specialises in legacy code clean up, stability and optimisation so teams can grow with confidence.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Sora:wght@500;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --ink: #141414;
-      --paper: #fffaf4;
-      --sand: #f2e6da;
-      --accent: #d54f25;
-      --accent-deep: #b33f1b;
-      --leaf: #234634;
-      --line: #e0d5c8;
-      --card: #fffdf8;
-      --shadow: 0 18px 40px rgba(24, 18, 12, 0.1);
-    }
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Red Oryx Ltd</title>
+    <meta name="description" content="Red Oryx Ltd placeholder site.">
 
-    * {
-      box-sizing: border-box;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-    body {
-      margin: 0;
-      font-family: "Archivo", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 85% -10%, #f6c997 0 20%, transparent 52%),
-        radial-gradient(circle at 8% 10%, #f0b368 0 18%, transparent 44%),
-        linear-gradient(160deg, #fff9f2 0%, var(--paper) 46%, #f6eee4 100%);
-      color: var(--ink);
-      min-height: 100vh;
-      line-height: 1.45;
-    }
-
-    .grain {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.12;
-      background-image:
-        radial-gradient(circle at 20% 20%, #000 0.5px, transparent 1px),
-        radial-gradient(circle at 70% 40%, #000 0.5px, transparent 1px),
-        radial-gradient(circle at 30% 80%, #000 0.6px, transparent 1px);
-      background-size: 180px 180px;
-    }
-
-    .site {
-      width: min(1120px, 94vw);
-      margin: 24px auto 32px;
-      border: 1px solid var(--line);
-      background: rgba(255, 252, 246, 0.8);
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .site::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(45deg, transparent 25%, rgba(213, 79, 37, 0.05) 25% 26%, transparent 26% 74%, rgba(35, 70, 52, 0.05) 74% 75%, transparent 75%);
-      background-size: 42px 42px;
-      pointer-events: none;
-    }
-
-    header,
-    main,
-    footer {
-      position: relative;
-      z-index: 1;
-    }
-
-    .top-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 24px;
-      border-bottom: 1px solid var(--line);
-      background: rgba(255, 246, 236, 0.85);
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.84rem;
-      font-weight: 600;
-    }
-
-    .logo-placeholder {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      border: 2px solid var(--ink);
-      display: grid;
-      place-items: center;
-      font-family: "Sora", sans-serif;
-      font-size: 0.7rem;
-      background: linear-gradient(145deg, #fff8ef, #eddcc8);
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 26px;
-      padding: 38px 24px 30px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .kicker {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent-deep);
-      margin: 0 0 12px;
-      font-weight: 700;
-    }
-
-    h1 {
-      margin: 0;
-      font-family: "Sora", sans-serif;
-      font-size: clamp(2rem, 4.8vw, 3.6rem);
-      line-height: 1.06;
-      letter-spacing: -0.03em;
-      max-width: 16ch;
-      text-wrap: balance;
-    }
-
-    .summary {
-      margin: 18px 0 24px;
-      max-width: 56ch;
-      color: #3b342c;
-      font-size: 1.05rem;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      text-decoration: none;
-      padding: 11px 16px;
-      border: 1px solid var(--ink);
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: transform 120ms ease, background-color 120ms ease;
-    }
-
-    .btn.primary {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent-deep);
-    }
-
-    .btn.primary:hover {
-      background: var(--accent-deep);
-      transform: translateY(-1px);
-    }
-
-    .btn.secondary {
-      color: var(--ink);
-      background: rgba(255, 255, 255, 0.45);
-    }
-
-    .btn.secondary:hover {
-      background: #fff;
-      transform: translateY(-1px);
-    }
-
-    .graphic {
-      border: 1px solid var(--line);
-      background: linear-gradient(160deg, #fffefb, #f7ebdd);
-      min-height: 330px;
-      padding: 20px;
-      display: grid;
-      grid-template-rows: auto 1fr;
-      gap: 16px;
-      position: relative;
-    }
-
-    .graphic-label {
-      margin: 0;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.75rem;
-      color: #635646;
-    }
-
-    .diagram {
-      align-self: center;
-      justify-self: center;
-      width: min(100%, 340px);
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at center, rgba(255, 255, 255, 0.94) 0 28%, transparent 29%),
-        conic-gradient(from -32deg,
-          #f0c080 0deg 64deg,
-          #d85b2f 64deg 134deg,
-          #2b5a43 134deg 210deg,
-          #d8c2a9 210deg 280deg,
-          #8ea083 280deg 360deg);
-      border: 2px solid #f2e0cd;
-      box-shadow: inset 0 0 0 10px rgba(255, 255, 255, 0.42);
-      position: relative;
-    }
-
-    .diagram::after {
-      content: "Stable Foundations";
-      position: absolute;
-      inset: 40% 16% auto;
-      text-align: center;
-      font-family: "Sora", sans-serif;
-      font-size: clamp(0.92rem, 2.2vw, 1.1rem);
-      line-height: 1.2;
-      color: var(--leaf);
-    }
-
-    .sections {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .card {
-      padding: 24px;
-      border-right: 1px solid var(--line);
-      background: var(--card);
-    }
-
-    .card:last-child {
-      border-right: 0;
-    }
-
-    .card h2 {
-      margin: 0 0 10px;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-family: "Sora", sans-serif;
-    }
-
-    .card p {
-      margin: 0;
-      color: #3d352d;
-    }
-
-    .process {
-      padding: 26px 24px;
-      display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 16px;
-      align-items: start;
-      border-bottom: 1px solid var(--line);
-      background: #fff7ee;
-    }
-
-    .process h2 {
-      margin: 0;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      font-family: "Sora", sans-serif;
-    }
-
-    .steps {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .steps li {
-      border: 1px solid var(--line);
-      padding: 14px;
-      background: #fff;
-      min-height: 100%;
-    }
-
-    .steps b {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 0.82rem;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent-deep);
-    }
-
-    .contact {
-      padding: 24px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-    }
-
-    .contact p {
-      margin: 0;
-      font-size: 1.04rem;
-      max-width: 60ch;
-    }
-
-    .email {
-      font-family: "Sora", sans-serif;
-      font-size: 1.02rem;
-      text-decoration: none;
-      color: var(--leaf);
-      border-bottom: 2px solid var(--leaf);
-      padding-bottom: 2px;
-    }
-
-    .email:hover {
-      color: var(--accent-deep);
-      border-color: var(--accent-deep);
-    }
-
-    footer {
-      border-top: 1px solid var(--line);
-      padding: 14px 24px 18px;
-      font-size: 0.83rem;
-      color: #6f6152;
-      background: rgba(255, 244, 230, 0.7);
-    }
-
-    @media (max-width: 920px) {
-      .hero {
-        grid-template-columns: 1fr;
+    <style>
+      :root {
+        --bg: #18060d;
+        --panel: #31111c;
+        --panel-2: #261018;
+        --line: #5a2a3a;
+        --text: #f5e8ec;
+        --muted: #d2a7b5;
+        --ruby-soft: #f28ca4;
+        --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
       }
 
-      .sections {
-        grid-template-columns: 1fr;
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        min-height: 100%;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 40px 24px;
+        background:
+          radial-gradient(circle at top, rgba(132, 23, 53, 0.22), transparent 35%),
+          linear-gradient(180deg, #210912 0%, var(--bg) 100%);
+        color: var(--text);
+        font-family: "Inter", Arial, sans-serif;
       }
 
       .card {
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
+        width: min(1360px, 100%);
+        min-height: 760px;
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(520px, 1.08fr);
+        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
       }
 
-      .card:last-child {
-        border-bottom: 0;
+      .copy {
+        padding: 60px 52px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
       }
 
-      .process {
-        grid-template-columns: 1fr;
+      .eyebrow {
+        margin: 0;
+        color: var(--ruby-soft);
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
       }
 
-      .steps {
-        grid-template-columns: 1fr;
+      h1 {
+        margin: 0;
+        font-family: "Space Grotesk", Arial, sans-serif;
+        font-size: clamp(2.9rem, 5vw, 4.8rem);
+        line-height: 0.95;
+        letter-spacing: -0.04em;
       }
-    }
-  </style>
-</head>
-<body>
-  <div class="grain"></div>
-  <div class="site">
-    <header class="top-bar">
-      <div class="brand">
-        <div class="logo-placeholder" aria-hidden="true">LOGO</div>
-        <span>Red Oryx</span>
-      </div>
-      <a class="email" href="mailto:hello@redoryx.com">hello@redoryx.com</a>
-    </header>
 
-    <main>
-      <section class="hero">
-        <div>
-          <p class="kicker">Legacy code specialists</p>
-          <h1>Clean up complexity. Build reliable software foundations.</h1>
-          <p class="summary">
-            Red Oryx specialises in legacy code clean up, stability and optimisation. We help teams
-            establish strong code foundations so they can grow and improve with confidence.
+      .copy-block {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        max-width: 34rem;
+      }
+
+      .lede,
+      .supporting {
+        margin: 0;
+        font-size: clamp(1rem, 1.1vw, 1.12rem);
+        line-height: 1.8;
+        color: var(--muted);
+      }
+
+      .lede strong,
+      .supporting strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        align-items: center;
+        margin-top: 6px;
+      }
+
+      .cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 0 18px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 0.95rem;
+        font-weight: 700;
+        transition: transform 0.15s ease, filter 0.15s ease, background 0.15s ease;
+      }
+
+      .cta-primary {
+        color: #fff1f4;
+        background: linear-gradient(90deg, #b73e5d 0%, #d85676 55%, #f06c8d 100%);
+      }
+
+      .cta-secondary {
+        color: var(--text);
+        border: 1px solid var(--line);
+        background: rgba(255,255,255,0.02);
+      }
+
+      .cta:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.05);
+      }
+
+      .contact {
+        margin: 0;
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+
+      .visual {
+        min-height: 100%;
+        background: var(--panel-2);
+        border-left: 1px solid var(--line);
+        overflow: hidden;
+      }
+
+      .visual img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        transform: scale(1);
+        transform-origin: center center;
+        transition: transform 1.15s ease;
+      }
+
+      .card:hover .visual img {
+        transform: scale(1.05);
+      }
+
+      @media (max-width: 1100px) {
+        .card {
+          width: min(1180px, 100%);
+          grid-template-columns: minmax(0, 1fr) minmax(420px, 0.95fr);
+          min-height: 700px;
+        }
+
+        .copy {
+          padding: 48px 40px;
+        }
+      }
+
+      @media (max-width: 900px) {
+        .card {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+
+        .copy {
+          padding: 32px 24px;
+        }
+
+        .copy-block {
+          max-width: none;
+        }
+
+        .visual {
+          border-left: 0;
+          border-top: 1px solid var(--line);
+          min-height: 420px;
+        }
+
+        .actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .cta {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="card">
+      <section class="copy">
+        <p class="eyebrow">Product Engineering & Operations</p>
+
+        <h1>Red Oryx Ltd</h1>
+
+        <div class="copy-block">
+          <p class="lede">
+            We help established businesses <strong>modernise critical systems</strong> without
+            disrupting the work that keeps them moving. From fragile internal tooling to tangled
+            service boundaries, we bring structure, clarity, and maintainable delivery.
           </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="mailto:hello@redoryx.com">Start a conversation</a>
-            <a class="btn secondary" href="#focus">See our focus</a>
-          </div>
+
+          <p class="supporting">
+            Our work typically starts where things have become harder than they should be:
+            duplicated workflows, brittle reporting, operational bottlenecks, under-documented
+            integrations, and release processes that rely too heavily on tribal knowledge. We help
+            teams simplify the mess, reduce operational drag, and move forward with systems they
+            can actually own.
+          </p>
         </div>
-        <aside class="graphic" aria-label="Foundations graphic">
-          <p class="graphic-label">Engineering focus map</p>
-          <div class="diagram"></div>
-        </aside>
+
+        <div class="actions">
+          <a class="cta cta-primary" href="mailto:hello@redoryx.co.uk">Start a Conversation</a>
+          <a class="cta cta-secondary" href="mailto:hello@redoryx.co.uk">hello@redoryx.co.uk</a>
+        </div>
+
+        <p class="contact">
+          Calm delivery. Durable architecture. Practical modernisation.
+        </p>
       </section>
 
-      <section class="sections" id="focus">
-        <article class="card">
-          <h2>Legacy Clean Up</h2>
-          <p>Reduce brittle, hard-to-change code paths and replace them with maintainable structure.</p>
-        </article>
-        <article class="card">
-          <h2>Stability</h2>
-          <p>Strengthen reliability, observability and confidence so releases are predictable.</p>
-        </article>
-        <article class="card">
-          <h2>Optimisation</h2>
-          <p>Improve performance and delivery flow while preserving the knowledge inside existing systems.</p>
-        </article>
-      </section>
-
-      <section class="process" aria-label="How Red Oryx works">
-        <h2>Approach</h2>
-        <ol class="steps">
-          <li>
-            <b>01 Diagnose</b>
-            Audit risk hotspots, dependencies and long-term maintenance pressure.
-          </li>
-          <li>
-            <b>02 Reinforce</b>
-            Refactor critical paths and add practical quality guardrails.
-          </li>
-          <li>
-            <b>03 Enable Growth</b>
-            Hand over a clearer platform that supports faster, safer change.
-          </li>
-        </ol>
-      </section>
-
-      <section class="contact">
-        <p>Need a stronger technical base before your next growth phase? Let’s talk.</p>
-        <a class="btn primary" href="mailto:hello@redoryx.com">hello@redoryx.com</a>
+      <section class="visual">
+        <img src="assets/images/red_oryx.png" alt="Red Oryx visual">
       </section>
     </main>
-
-    <footer>
-      Red Oryx • Legacy code clean up, stability and optimisation.
-    </footer>
-  </div>
-</body>
+  </body>
 </html>
