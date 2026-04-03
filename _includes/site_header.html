@@ -1,0 +1,18 @@
+<header class="site-header">
+  <div class="shell site-header__inner">
+    <a class="brand" href="{{ '/' | relative_url }}">
+      <span class="brand__mark">Red Oryx Ltd</span>
+      <span class="brand__tag">Ruby and Ruby on Rails consulting</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Primary">
+      {% for item in site.data.navigation %}
+        {% assign page_url = page.url | replace: 'index.html', '' %}
+        {% assign item_url = item.url | relative_url %}
+        <a class="site-nav__link{% if page_url == item.url %} is-active{% endif %}" href="{{ item_url }}">
+          {{ item.title }}
+        </a>
+      {% endfor %}
+    </nav>
+  </div>
+</header>

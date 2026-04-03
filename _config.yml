@@ -1,0 +1,28 @@
+title: Red Oryx
+email: hello@redoryx.co.uk
+description: Placeholder Jekyll site for Red Oryx while the main theme and content are finalized.
+url: "https://redoryx.co.uk"
+baseurl: ""
+lang: en-GB
+timezone: Europe/London
+markdown: kramdown
+permalink: pretty
+
+collections:
+  case_studies:
+    output: true
+    permalink: /case-studies/:name/
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: case_studies
+    values:
+      layout: case-study
+
+exclude:
+  - README.md
