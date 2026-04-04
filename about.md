@@ -58,40 +58,35 @@ body_class: page-about
             <span class="service-card__accent"></span>
             <span class="service-card__marker">01</span>
             <h3>Legacy Rails modernisation</h3>
-            <p>Older Rails applications often reach a point where change becomes expensive, risky, and frustrating. Red Oryx helps modernise those systems in a controlled way, reducing complexity and improving confidence without treating a full rewrite as the default answer.</p>
-            <p>This can include cleaning up outdated patterns, upgrading dependencies, improving code structure, reducing hidden coupling, and creating a clearer path for future development.</p>
+            <p>Older Rails applications often become slow, fragile, and expensive to change. Red Oryx helps modernise them in a controlled way, reducing risk and complexity without defaulting to a full rewrite.</p>
           </article>
 
           <article class="service-card">
             <span class="service-card__accent"></span>
             <span class="service-card__marker">02</span>
             <h3>Refactoring and codebase stabilisation</h3>
-            <p>When a codebase has grown under pressure for years, it often carries a lot of accidental complexity. Red Oryx helps identify the parts that are causing the most friction and works to make them easier to understand, safer to change, and less likely to produce regressions.</p>
-            <p>That may involve extracting business logic, simplifying overgrown classes, separating responsibilities more clearly, and reducing the sort of spaghetti code that slows a team down.</p>
+            <p>When a codebase has accumulated years of pressure and patchwork, change becomes harder than it should be. Red Oryx helps untangle brittle areas, clarify responsibilities, and make the system safer to understand and extend.</p>
           </article>
 
           <article class="service-card">
             <span class="service-card__accent"></span>
             <span class="service-card__marker">03</span>
             <h3>Rails upgrades and technical recovery</h3>
-            <p>Postponed upgrades have a habit of turning into major risks. Red Oryx helps businesses work through framework, Ruby, and infrastructure upgrades in a structured way, reducing the fear and uncertainty that often surrounds them.</p>
-            <p>The aim is not just to get onto a newer version, but to leave the system in a healthier state afterwards, with fewer brittle workarounds and a more maintainable foundation.</p>
+            <p>Delayed upgrades have a habit of turning into business risk. Red Oryx helps teams work through Ruby, Rails, dependency, and platform upgrades in a structured way, leaving the system healthier afterwards.</p>
           </article>
 
           <article class="service-card">
             <span class="service-card__accent"></span>
             <span class="service-card__marker">04</span>
             <h3>Testing and confidence building</h3>
-            <p>Many legacy systems suffer from a lack of reliable tests, which makes every change feel dangerous. Red Oryx helps introduce or improve automated test coverage where it will actually make a difference, so that teams can move faster with less fear of unintended breakage.</p>
-            <p>That includes improving test structure, focusing on meaningful coverage, and using testing as a tool to support refactoring and safer delivery.</p>
+            <p>Many legacy systems lack the test coverage needed for safe change. Red Oryx helps introduce or strengthen meaningful automated tests so teams can refactor, upgrade, and release with more confidence.</p>
           </article>
 
           <article class="service-card service-card--featured">
             <span class="service-card__accent"></span>
             <span class="service-card__marker">05</span>
             <h3>Workflow and delivery cleanup</h3>
-            <p>Sometimes the biggest problems are not only in the application code itself, but in the surrounding development and delivery workflow. Red Oryx can help clean up fragile release processes, awkward deployment patterns, background job workflows, and other operational pain points that make day-to-day development harder than it should be.</p>
-            <p>The result is usually less friction, fewer surprises, and a smoother path from change to production.</p>
+            <p>Sometimes the real problem is not just the code, but the way changes move around it. Red Oryx helps clean up release processes, delivery friction, and operational pain points so development becomes steadier and less painful.</p>
           </article>
         </div>
       </section>
@@ -124,7 +119,7 @@ body_class: page-about
 
       <section class="about-network reveal">
         <div class="about-network__visual" aria-hidden="true">
-          <div class="about-network__texture"></div>
+          <img src="{{ '/assets/images/network.png' | relative_url }}" alt="">
         </div>
 
         <div class="about-network__copy">
@@ -169,60 +164,74 @@ body_class: page-about
       </section>
 
       <section class="about-contact reveal" id="contact">
-        <div class="about-contact__main">
-          <p class="eyebrow">Contact</p>
-          <h2>Get in touch.</h2>
+        <div class="about-contact__intro">
+          <p class="eyebrow">Project Enquiries</p>
+          <h2>Tell us about your project.</h2>
           <p>
-            If you have a Ruby or Rails system that has become difficult to work on, or you need
-            experienced help stabilising, upgrading, or modernising an existing application, get in touch.
+            Share a few details about what you are trying to improve, untangle, or deliver, and we
+            will get back to you to continue the conversation.
           </p>
           <p>
-            Whether the need is a focused piece of recovery work, ongoing contract support, or a
-            conversation about where the real risks are in an existing system, Red Oryx is happy to hear
-            from you.
+            If you would rather keep it simple, you can email
+            <a class="inline-link" href="mailto:{{ site.email }}">{{ site.email }}</a>
+            directly.
           </p>
+        </div>
 
-          <form class="contact-form" action="#" method="post">
-            <div class="contact-form__grid">
+        <div class="about-contact__form">
+          <form class="lead-form" id="lead-form" action="#" method="post">
+            <div class="form-grid">
               <div class="field">
-                <label for="contact-name">Name</label>
-                <input id="contact-name" name="name" type="text" autocomplete="name">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
               </div>
               <div class="field">
-                <label for="contact-email">Email address</label>
-                <input id="contact-email" name="email" type="email" autocomplete="email">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
               </div>
               <div class="field field--full">
-                <label for="contact-company">Company</label>
-                <input id="contact-company" name="company" type="text" autocomplete="organization">
-              </div>
-              <div class="field field--full">
-                <label for="contact-message">Brief message</label>
-                <textarea id="contact-message" name="message" rows="6"></textarea>
+                <label for="project">How can we help?</label>
+                <textarea id="project" name="project" rows="6" required></textarea>
               </div>
             </div>
 
-            <p class="contact-form__note">A short note is enough to start. There is no need to prepare a formal brief before reaching out.</p>
-            <button class="button button--primary" type="submit">Send message</button>
+            <div class="optional-fields">
+              <p class="optional-fields__label">Optional details</p>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="company">Company</label>
+                  <input id="company" name="company" type="text" autocomplete="organization">
+                </div>
+                <div class="field">
+                  <label for="website">Company website</label>
+                  <input id="website" name="website" type="url" inputmode="url" autocomplete="url">
+                </div>
+                <div class="field">
+                  <label for="timeline">Timeline / urgency</label>
+                  <select id="timeline" name="timeline">
+                    <option value="not-urgent">Not urgent</option>
+                    <option value="next-month">Within the next month</option>
+                    <option value="next-3-months">Within the next 3 months</option>
+                    <option value="urgent">Urgent / as soon as possible</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="budget">Budget range</label>
+                  <select id="budget" name="budget">
+                    <option value="prefer-not-to-say">Prefer not to say</option>
+                    <option value="under-5000">Under £5,000</option>
+                    <option value="5000-10000">£5,000 to £10,000</option>
+                    <option value="10000-25000">£10,000 to £25,000</option>
+                    <option value="25000-plus">£25,000+</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <button class="button button--primary submit-button" type="submit">Send enquiry</button>
+            <p class="form-status" id="form-status" aria-live="polite"></p>
           </form>
         </div>
-
-        <aside class="about-contact__aside">
-          <div class="contact-panel__box">
-            <p class="contact-panel__label">Email</p>
-            <a class="contact-panel__email" href="mailto:{{ site.email }}">{{ site.email }}</a>
-            <p class="contact-panel__note">Prefer email? Contact <a class="inline-link" href="mailto:{{ site.email }}">{{ site.email }}</a> directly.</p>
-
-            <p class="contact-panel__label contact-panel__label--spaced">What to include</p>
-            <ul class="bullet-list">
-              <li>A brief summary of the system.</li>
-              <li>The main pain points or risks.</li>
-              <li>Whether the help is short-term or ongoing.</li>
-            </ul>
-
-            <p class="contact-panel__note">A short message is enough to start.</p>
-          </div>
-        </aside>
       </section>
     </section>
   </div>

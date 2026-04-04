@@ -52,7 +52,7 @@ layout: default
       <div class="hero__visual reveal reveal--delay">
         <div class="hero__visual-panel">
           <div class="hero__visual-overlay"></div>
-          <img src="{{ '/assets/images/red_oryx.png' | relative_url }}" alt="Red Oryx brand image">
+          <img src="{{ '/assets/images/oryx-silhouette.png' | relative_url }}" alt="Red Oryx silhouette">
         </div>
       </div>
     </section>
