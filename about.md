@@ -118,9 +118,7 @@ body_class: page-about
       </section>
 
       <section class="about-network reveal">
-        <div class="about-network__visual" aria-hidden="true">
-          <img src="{{ '/assets/images/network.png' | relative_url }}" alt="">
-        </div>
+        <div class="about-network__visual" aria-hidden="true"></div>
 
         <div class="about-network__copy">
           <p class="eyebrow">Trusted Network</p>

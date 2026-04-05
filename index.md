@@ -62,7 +62,7 @@ layout: default
 <section class="page-body">
   <div class="page-body__inner">
     <section class="shell section-grid section-grid--expertise">
-      <article class="content-card reveal">
+      <article class="content-card content-card--expertise reveal">
         <p class="eyebrow">What Red Oryx helps with</p>
         <h2>Support for systems that matter to the business but have become harder to work on.</h2>
         <div class="tile-grid">
@@ -85,7 +85,7 @@ layout: default
         </div>
       </article>
 
-      <article class="content-card content-card--contrast reveal reveal--delay">
+      <article class="home-aside reveal reveal--delay">
         <p class="eyebrow">Why clients bring Red Oryx in</p>
         <h2>Focused technical help for teams dealing with software that has started to fight back.</h2>
         <ul class="bullet-list">
@@ -121,16 +121,26 @@ layout: default
       </div>
     </section>
 
-    <section class="shell callout-band reveal">
-      <div>
-        <p class="eyebrow">Start the conversation</p>
-        <h2>If your Ruby or Rails system has become fragile, slow to change, or difficult to trust, Red Oryx can help.</h2>
-      </div>
-
-      <div class="callout-band__actions">
-        <a class="button button--primary" href="{{ '/about/#contact' | relative_url }}">Talk to Red Oryx</a>
-        <a class="button button--ghost" href="mailto:{{ site.email }}">{{ site.email }}</a>
-      </div>
-    </section>
   </div>
+
+  <section class="callout-stage reveal">
+    <div class="shell">
+      <div class="callout-band">
+        <div class="callout-band__copy">
+          <p class="eyebrow">Start the conversation</p>
+          <h2>If your Ruby or Rails system has become fragile, slow to change, or difficult to trust, Red Oryx can help.</h2>
+          <p class="callout-band__support">
+            Whether you need focused recovery work, legacy modernisation, or senior support on a difficult
+            technical problem, start with a simple conversation.
+          </p>
+          <p class="callout-band__signals">Legacy rescue · Rails modernisation · Technical recovery</p>
+        </div>
+
+        <div class="callout-band__actions">
+          <a class="button button--primary" href="{{ '/about/#contact' | relative_url }}">Discuss your system</a>
+          <p class="callout-band__note">A short message is enough to get started.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
