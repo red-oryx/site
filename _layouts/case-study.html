@@ -1,0 +1,90 @@
+---
+layout: default
+---
+{% capture case_study_meta %}
+  <dl class="meta-list">
+    <div>
+      <dt>Focus</dt>
+      <dd>{{ page.focus }}</dd>
+    </div>
+    <div>
+      <dt>Scope</dt>
+      <dd>{{ page.scope }}</dd>
+    </div>
+    <div>
+      <dt>Work Type</dt>
+      <dd>{{ page.work_type }}</dd>
+    </div>
+  </dl>
+{% endcapture %}
+
+<section class="top-stage top-stage--case-study">
+  {% include site_header.html %}
+
+  <div class="top-stage__content">
+    <div class="shell">
+      {% include page_header.html
+        eyebrow="Case Study"
+        title=page.title
+        intro=page.summary
+        meta_title="Engagement Snapshot"
+        meta_body=case_study_meta
+        compact=true
+      %}
+    </div>
+  </div>
+</section>
+
+<section class="page-body">
+  <div class="page-body__inner">
+    <article class="case-study-page shell">
+      <section class="case-study-layout">
+        <aside class="case-study-rail">
+          <section class="rail-card">
+            <p class="rail-card__eyebrow">Highlights</p>
+            <ul class="bullet-list">
+              {% for item in page.highlights %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+
+          <section class="rail-card">
+            <p class="rail-card__eyebrow">Outcome Areas</p>
+            <ul class="bullet-list">
+              {% for item in page.outcomes %}
+                <li>{{ item }}</li>
+              {% endfor %}
+            </ul>
+          </section>
+        </aside>
+
+        <section class="case-study-article prose">
+          {{ content }}
+        </section>
+      </section>
+    </article>
+  </div>
+
+  {% if page.cta_title %}
+    <section class="case-study-callout-stage">
+      <div class="shell">
+        <div class="case-study-callout-band">
+          <div class="case-study-callout-band__copy">
+            <p class="eyebrow">{{ page.cta_eyebrow | default: "Start the Conversation" }}</p>
+            <h2>{{ page.cta_title }}</h2>
+            {% if page.cta_body %}
+              <p class="case-study-callout-band__support">{{ page.cta_body }}</p>
+            {% endif %}
+          </div>
+
+          <div class="case-study-callout-band__actions">
+            <a class="button button--primary" href="{{ '/about/#contact' | relative_url }}">
+              {{ page.cta_button_label | default: "Start the conversation" }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+</section>

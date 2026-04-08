@@ -1,0 +1,25 @@
+<header class="page-header{% if include.compact %} page-header--compact{% endif %}{% if include.minimal %} page-header--minimal{% endif %}">
+  <div class="page-header__backdrop"></div>
+  <div class="page-header__grid{% unless include.meta_title %} page-header__grid--single{% endunless %}">
+    <div class="page-header__copy">
+      {% if include.eyebrow %}
+        <p class="eyebrow">{{ include.eyebrow }}</p>
+      {% endif %}
+
+      <h1>{{ include.title }}</h1>
+
+      {% if include.intro %}
+        <p class="page-intro">{{ include.intro }}</p>
+      {% endif %}
+    </div>
+
+    {% if include.meta_title %}
+      <aside class="page-header__meta reveal">
+        <p class="page-header__meta-label">{{ include.meta_title }}</p>
+        <div class="page-header__meta-body">
+          {{ include.meta_body }}
+        </div>
+      </aside>
+    {% endif %}
+  </div>
+</header>
