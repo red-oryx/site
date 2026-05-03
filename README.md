@@ -8,6 +8,7 @@ Jekyll scaffold for the Red Oryx marketing site.
 - `/about/`
 - `/case-studies/jugglebee/`
 - `/privacy/`
+- `/company-information/`
 
 ## Local development
 
