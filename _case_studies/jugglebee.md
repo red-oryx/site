@@ -25,7 +25,7 @@ cta_button_label: Start the conversation
     <p class="eyebrow">Snapshot</p>
     <h2>Namibia's first online auction platform for everyday buyers and sellers.</h2>
     <p>
-        JuggleBee was built to give everyday buyers and sellers a structured way to auction goods or sell
+        <a href="https://jugglebee.com" target="_blank" rel="noopener noreferrer">JuggleBee</a> was built to give everyday buyers and sellers a structured way to auction goods or sell
         them directly online instead of relying only on informal channels.
     </p>
     <p>
